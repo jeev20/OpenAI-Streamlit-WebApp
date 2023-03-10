@@ -1,4 +1,11 @@
 ## OpenAI-Streamlit app deployed on a Raspberry Pi 4
+This integration uses the OpenAI API and explores their different models. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing search history by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAIIntegration/blob/master/pages/3_📋_Search_History.py) page. 
+
+![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/SearchPage.JPG "Search History Page")
+
+I host this app on a raspberrypi 4 which serves as my assistant. ChatGPT does improve troubleshooting and I do like having access to this superpower. 
+
+Ideally, this implementation will be only on your network where the raspberrypi is connected. I use a OpenVPN solution to access this from anywhere in the world. This was developed during my vacation in India and deployed on a raspberrypi back home in Norway. Pretty fun!
 
 ### OpenAI API key as Enviornment variable
 #### On Linux
@@ -43,3 +50,15 @@ Add the following at the end of `crontab` file
 @reboot /home/raspi4/RunChatGPT.sh
 ```
 This should then run streamlit when the raspberrypi reboots. 
+
+## Authors
+
+* *Initial commit* - [jeev20](https://github.com/jeev20)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/jeev20/pigstack/blob/master/LICENSE) file for details
+
+## Acknowledgments
+
+* Thanks to folks at Streamlit and OpenAI 
