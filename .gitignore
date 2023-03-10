@@ -1,0 +1,9 @@
+# ignore all logs
+*.log
+
+# ignore all images
+*.png
+
+# ignore virtual env
+env
+
