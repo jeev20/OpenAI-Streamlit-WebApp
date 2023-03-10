@@ -39,7 +39,7 @@ def download_image(image_url, fullFilePath):
     
 
 # Show the promt to the user
-ImagePromt = st.text_input(label="Promt",  placeholder="Your promt to create an image", label_visibility="hidden",)
+ImagePromt = st.text_input(label="Promt",  placeholder="Provide your promt to create an image", label_visibility="hidden",)
 
 if len(ImagePromt)>0:  # only send calls if promts are available
     response = openai.Image.create(

@@ -15,15 +15,13 @@ logging.basicConfig(
 logger = logging.getLogger("ChatGPT")
 
 
-
-
 st.set_page_config(
     page_title="ChatGPT",
     page_icon="💬",
 )
 
 # Show promt to the user
-promt = st.text_input(label="Promt", placeholder="Your promt here",label_visibility="hidden",)
+promt = st.text_input(label="Promt", placeholder="Provide your promt",label_visibility="hidden",)
 
 
 if len(promt)>0:  # only send calls if promts are available

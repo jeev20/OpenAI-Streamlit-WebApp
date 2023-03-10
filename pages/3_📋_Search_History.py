@@ -3,12 +3,10 @@ import os
 from pathlib import Path
 import base64
 import json
+from itertools import cycle
+from PIL import Image
 
 
-def img_to_bytes(img_path):
-    img_bytes =  Path(img_path).read_bytes()
-    encoded = base64.b64encode(img_bytes).decode()
-    return encoded
 
 st.markdown("#### Parse search history")
 keep_phrases = ["ChatGPT", "Dall-E2"]
@@ -18,14 +16,15 @@ infile = os.path.join(os.path.dirname(os.path.realpath(__file__)),"logs", "execu
 
 log_items = []
 
-
+# Only read the file once
 with open(infile) as f:
     f = f.readlines()
 
+# Save the lines to memory
 for line in f:
     log_items.append(line)
     
-    
+# Populate promts and responses for given models 
 responses = [] # your images here
 promts = [] # your caption here
 for log in log_items:
@@ -39,9 +38,8 @@ for log in log_items:
         promts.append(data["message"]["Promt"])
         
         
-from itertools import cycle
-from PIL import Image
 
+# Given the type of the model show the results in a custom way
 if selected_model=="ChatGPT":
     cols = cycle(st.columns(1))    
     for idx, response in enumerate(responses):
