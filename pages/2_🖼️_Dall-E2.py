@@ -10,10 +10,11 @@ from datetime import datetime
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
+log_fmt = ("{\"time\": \"%(asctime)-s\", \"level\": \"%(levelname)-s\", \"logger\":\"Dall-E2\", \"message\": %(message)s}")
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(message)s",
-    filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"logs\\execution.log"),
+    format=log_fmt,
+    filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"logs", "execution.log"),
     filemode='a',
 )
 
@@ -55,11 +56,12 @@ if len(ImagePromt)>0:  # only send calls if promts are available
     st.markdown("***")
     
     timestamp=datetime.now().strftime("%d_%m_%Y-%I_%M_%S_%p")
-    fullFilePath = os.path.join(os.path.dirname(os.path.realpath(__file__)),"images\\result_{0}.png".format(timestamp))  
+    fullFilePath = os.path.join(os.path.dirname(os.path.realpath(__file__)),"images","result_{0}.png".format(timestamp)).replace("\\","\\\\")
     download_image(image_url.strip(), fullFilePath)
     
+    logText = "{\"Promt\":\"%s\",\"Response\":\"%s\", \"ImageLocation\":\"%s\"}" % (ImagePromt, image_url.strip(),fullFilePath)
+    logger.info(logText)
     
-    logger.info("|ImagePromt:%s",ImagePromt.strip()+"|Response:"+ image_url.strip()+"|"+"Image saved at:"+ fullFilePath+"|")
 else:
     st.markdown("***")
     st.markdown("#### Promts are required to generate images in Dall-E2")

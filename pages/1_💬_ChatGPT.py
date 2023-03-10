@@ -1,18 +1,19 @@
-# Show the promt to the user
 import streamlit as st
 import os
 import openai
 import logging
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
+log_fmt = ("{\"time\": \"%(asctime)-s\", \"level\": \"%(levelname)-s\", \"logger\":\"ChatGPT\", \"message\": %(message)s}")
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(message)s",
-    filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"logs\\execution.log"),
+    format=log_fmt,
+    filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"logs", "execution.log"),
     filemode='a',
 )
 
 logger = logging.getLogger("ChatGPT")
+
 
 
 
@@ -21,6 +22,7 @@ st.set_page_config(
     page_icon="💬",
 )
 
+# Show promt to the user
 promt = st.text_input(label="Promt", placeholder="Your promt here",label_visibility="hidden",)
 
 
@@ -39,7 +41,9 @@ if len(promt)>0:  # only send calls if promts are available
     st.markdown("#### Response from ChatGPT")
     st.markdown(completion.choices[0].message.content)
     strippedResponse = completion.choices[0].message.content.strip(os.linesep).replace('\n', ' ')
-    logger.info("|Promt:%s",promt+"|Response:"+ strippedResponse+"|")
+    logText = "{\"Promt\":\"%s\",\"Response\":\"%s\"}" % (promt, strippedResponse)
+    logger.info(logText)
+    #logger.info("|Promt:%s",promt+"|Response:"+ strippedResponse+"|")
     st.markdown("***")
 else:
     st.markdown("***")
