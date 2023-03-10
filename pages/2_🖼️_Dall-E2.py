@@ -51,7 +51,7 @@ if len(ImagePromt)>0:  # only send calls if promts are available
     
     st.markdown("***")
     # Show the output to the user
-    st.markdown("#### Response from Dall-e")
+    #st.markdown("#### Response from Dall-e")
     st.markdown("![response]({0})".format(image_url))
     st.markdown("***")
     
