@@ -1,7 +1,16 @@
 ## OpenAI-Streamlit app deployed on a Raspberry Pi 4
 This integration uses the OpenAI API and explores their different models. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing search history by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAIIntegration/blob/master/pages/3_📋_Search_History.py) page. 
 
-![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/SearchPage.JPG "Search History Page")
+## Examples
+
+![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/ChatGPTPage.JPG "ChatGPT Page")
+
+![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/Dall-E2Page.JPG "Dall-E2 Page")
+
+![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/SearchPageChatGPT.JPG "Search Page ChatGPT")
+
+
+![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
 
 I host this app on a raspberrypi 4 which serves as my assistant. ChatGPT does improve troubleshooting and I do like having access to this superpower. 
 
