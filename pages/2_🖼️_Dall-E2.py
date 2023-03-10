@@ -58,8 +58,8 @@ if len(ImagePromt)>0:  # only send calls if promts are available
     timestamp=datetime.now().strftime("%d_%m_%Y-%I_%M_%S_%p")
     fullFilePath = os.path.join(os.path.dirname(os.path.realpath(__file__)),"images","result_{0}.png".format(timestamp)).replace("\\","\\\\")
     download_image(image_url.strip(), fullFilePath)
-    
-    logText = "{\"Promt\":\"%s\",\"Response\":\"%s\", \"ImageLocation\":\"%s\"}" % (ImagePromt, image_url.strip(),fullFilePath)
+    # replace " to ' to ensure our logs do not contain double quotes
+    logText = "{\"Promt\":\"%s\",\"Response\":\"%s\", \"ImageLocation\":\"%s\"}" % (ImagePromt.replace('"','\''), image_url.strip(),fullFilePath)
     logger.info(logText)
     
 else:

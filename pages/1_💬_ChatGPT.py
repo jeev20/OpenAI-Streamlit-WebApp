@@ -1,6 +1,8 @@
 import streamlit as st
 import os
 import openai
+import json
+import ast
 import logging
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
@@ -38,8 +40,11 @@ if len(promt)>0:  # only send calls if promts are available
     # Show the output to the user
     st.markdown("#### Response from ChatGPT")
     st.markdown(completion.choices[0].message.content)
-    strippedResponse = completion.choices[0].message.content.strip(os.linesep).replace('\n', ' ')
-    logText = "{\"Promt\":\"%s\",\"Response\":\"%s\"}" % (promt, strippedResponse)
+    strippedResponse = completion.choices[0].message.content.strip(os.linesep).replace('\n', 'NEWLINE') # removes line separator and mentions where newlines are. When we parse we can reverse this to get a good markdown visualization
+    # removes " to ' to ensure our logs do not contain double quotes
+    strippedResponse = strippedResponse.replace('"','\'')  
+    promt = promt.replace('"','\'') 
+    logText = "{\"Promt\":\"%s\",\"Response\":\"%s\"}" % (promt, strippedResponse)  
     logger.info(logText)
     #logger.info("|Promt:%s",promt+"|Response:"+ strippedResponse+"|")
     st.markdown("***")

@@ -43,14 +43,14 @@ for log in log_items:
 if selected_model=="ChatGPT":
     cols = cycle(st.columns(1))    
     for idx, response in enumerate(responses):
-        next(cols).markdown("**Promt**: %s" % promts[idx])
-        next(cols).markdown("**Response**: %s" %(response))
+        next(cols).markdown("**Promt**: %s" % promts[idx].replace('\'','"') )
+        next(cols).markdown("**Response**: %s" %(response.replace('\'','"').replace('NEWLINE','\n',)))  # Ensures that we get a nice markdown same as the original response from OpenAI
         next(cols).markdown("******")
 elif selected_model=="Dall-E2":  
     cols = cycle(st.columns(2))    
     for idx, response in enumerate(responses):
         image = Image.open(response)
-        next(cols).image(image, width=256, caption=promts[idx])         
+        next(cols).image(image, width=256, caption=promts[idx].replace('\'','"'))         
             
     
         
