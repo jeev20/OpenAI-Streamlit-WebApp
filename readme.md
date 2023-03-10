@@ -66,6 +66,8 @@ Add the following at the end of `crontab` file
 ```
 This should then run streamlit when the raspberrypi reboots. 
 
+-----------------------------------------------------------
+
 ### Authors
 
 * *Initial commit* - [jeev20](https://github.com/jeev20)
