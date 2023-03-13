@@ -1,10 +1,8 @@
 import streamlit as st
 import os
 import openai
-import json
-import ast
 import logging
-for handler in logging.root.handlers[:]:
+for handler in logging.root.handlers[:]:  # Removing handlers, this allows logging to a file
     logging.root.removeHandler(handler)
 log_fmt = ("{\"time\": \"%(asctime)-s\", \"level\": \"%(levelname)-s\", \"logger\":\"ChatGPT\", \"message\": %(message)s}")
 logging.basicConfig(
@@ -13,10 +11,10 @@ logging.basicConfig(
     filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"logs", "execution.log"),
     filemode='a',
 )
-
+# Giving this log a name
 logger = logging.getLogger("ChatGPT")
 
-
+# Setting name of the page in Streamlit
 st.set_page_config(
     page_title="ChatGPT",
     page_icon="💬",
@@ -24,7 +22,6 @@ st.set_page_config(
 
 # Show promt to the user
 promt = st.text_input(label="Promt", placeholder="Provide your promt",label_visibility="hidden",)
-
 
 if len(promt)>0:  # only send calls if promts are available
     #Authentication
@@ -38,7 +35,6 @@ if len(promt)>0:  # only send calls if promts are available
 
     st.markdown("***")
     # Show the output to the user
-    #st.markdown("#### Response from ChatGPT")
     st.markdown(completion.choices[0].message.content)
     strippedResponse = completion.choices[0].message.content.strip(os.linesep).replace('\n', 'NEWLINE') # removes line separator and mentions where newlines are. When we parse we can reverse this to get a good markdown visualization
     # removes " to ' to ensure our logs do not contain double quotes
@@ -46,7 +42,6 @@ if len(promt)>0:  # only send calls if promts are available
     promt = promt.replace('"','\'') 
     logText = "{\"Promt\":\"%s\",\"Response\":\"%s\"}" % (promt, strippedResponse)  
     logger.info(logText)
-    #logger.info("|Promt:%s",promt+"|Response:"+ strippedResponse+"|")
     st.markdown("***")
 else:
     st.markdown("***")
