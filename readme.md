@@ -43,11 +43,11 @@ nano etc/profile
 # at the end of the file add this 
 export OPENAI_API_KEY="YOUR OPENAI API KEY"
 ```
-To check all the environment variable is set we use 
+To check all the environment variables we can use 
 ```bash
 printenv
 ```
-OR 
+To check a specific one we can use `echo`  
 ```bash
 echo $OPENAI_API_KEY
 ```
