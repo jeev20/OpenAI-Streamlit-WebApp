@@ -28,9 +28,10 @@ This integration uses the OpenAI API and explores their different models. In the
 
 ### Hosting
 
-I host this app on a raspberrypi 4 which serves as my assistant. ChatGPT does improve troubleshooting and I do like having access to this superpower. 
+I host this app on a raspberrypi 4 which serves as my assistant. ChatGPT does improve troubleshooting and helps me be a better developer and I do like having access to this superpower. 
 
-Ideally, this implementation will be only on your network where the raspberrypi is connected. I use a OpenVPN solution to access this from anywhere in the world. This was developed during my vacation in India and deployed on a raspberrypi back home in Norway. Pretty fun!
+#### OpenVPN
+This implementation will only on your network where the raspberrypi is connected. But that is not good enough. To make it accessible anywhere in the world, I use a OpenVPN solution (from my Asus Router) to access this from anywhere in the world. This first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
 
 #### OpenAI API key as Enviornment variable
 ##### On Linux
@@ -43,6 +44,10 @@ export OPENAI_API_KEY="YOUR OPENAI API KEY"
 To check all the environment variable is set we use 
 ```bash
 printenv
+```
+OR 
+```bash
+echo $OPENAI_API_KEY
 ```
 ##### On windows
 Remember that newly set enviornment variables are only accessible after a restart of windows. 
