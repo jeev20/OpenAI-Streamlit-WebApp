@@ -28,6 +28,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 
 ## Usage using docker
 * Clone this repository
+* `CD` into the downloaded repository
 * Build the image `docker build -t openai-streamlit-webapp .`
 * Run the container `docker run -p 8501:8501 openai-streamlit-webapp`
 
