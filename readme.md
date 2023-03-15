@@ -28,7 +28,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 
 ## Usage using docker
 * Clone this repository
-* `CD` into the downloaded repository
+* `cd` into the downloaded repository
 * Build the image `docker build -t openai-streamlit-webapp .`
 * Run the container `docker run -p 8501:8501 openai-streamlit-webapp`
 
@@ -36,7 +36,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 ## Usage local execution
 * Clone this repository 
 * Set an enviornmental variable for the [OpenAI API key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) (see below how this is done in linux and windows)
-* `CD` into the downloaded repository
+* `cd` into the downloaded repository
 * Create a virtual environment in the repository (i use virtualenv : `virtualenv env`)
 * Activate your virtual environment `source env/bin/activate` on linux OR `.\env\Scripts\activate.ps1` on windows
 * Run `pip install -r requirements.txt` within your virtual environment
