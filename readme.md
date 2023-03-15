@@ -10,7 +10,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 - [OpenAI-Streamlit app deployed on a Raspberry Pi 4](#openai-streamlit-app-deployed-on-a-raspberry-pi-4)
 - [Usage using docker](#usage-using-docker)
 - [Usage local execution](#usage-local-execution)
-- [Examples](#examples)
+- [Screenshots](#screenshots)
     - [ChatGPT (generation and history retreival)](#chatgpt-generation-and-history-retreival)
     - [Dall-E2 (generation and history retreival)](#dall-e2-generation-and-history-retreival)
 - [Hosting and OpenVPN](#hosting-and-openvpn)
@@ -43,7 +43,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 * Run `streamlit run .\OpenAI_Demos.py` a browser will be opened at `http://localhost:8501`
 
 
-## Examples
+## Screenshots
 
 #### ChatGPT (generation and history retreival)
 
