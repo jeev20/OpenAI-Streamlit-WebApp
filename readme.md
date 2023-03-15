@@ -3,6 +3,27 @@ This streamlit multi-page webapp explores the different models from OpenAI API. 
 
 The cool thing about the `Search History` page is that it preserves the markdown syntax similar to the original response. The code blocks remain as code blocks and makes it visually easier to read the historical promts and responses. The `Search History` pages allows me to quickly look through the past promts and avoid redundant promts (saving on API token usage). 
 
+
+<details>
+ <summary>Table of contents</summary>
+
+- [OpenAI-Streamlit app deployed on a Raspberry Pi 4](#openai-streamlit-app-deployed-on-a-raspberry-pi-4)
+- [Usage](#usage)
+- [Examples](#examples)
+    - [ChatGPT (generation and history retreival)](#chatgpt-generation-and-history-retreival)
+    - [Dall-E2 (generation and history retreival)](#dall-e2-generation-and-history-retreival)
+- [Hosting and OpenVPN](#hosting-and-openvpn)
+  - [OpenAI API key as Enviornment variable](#openai-api-key-as-enviornment-variable)
+    - [On Linux](#on-linux)
+    - [On windows](#on-windows)
+- [Bash script](#bash-script)
+- [Start on reboot](#start-on-reboot)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+</details>
+
 ## Usage
 * Clone this repository 
 * Set an enviornmental variable for the [OpenAI API key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) (see below how this is done in linux and windows)
@@ -28,15 +49,14 @@ The cool thing about the `Search History` page is that it preserves the markdown
 ![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
 
 
-### Hosting
+## Hosting and OpenVPN
 
 I host this app on a raspberrypi 4 which serves as my assistant. 
 
-#### OpenVPN
 By default this implementation will only be accessible on your network where the raspberrypi is connected. But that is not good enough. To make it accessible anywhere in the world, I use a OpenVPN solution (from my Asus Router). This  This first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
 
-#### OpenAI API key as Enviornment variable
-##### On Linux
+### OpenAI API key as Enviornment variable
+#### On Linux
 To set the OpenAI API we can set an enviornment variable by navigating to `etc`. Here I use nano to open the `profile` contents. 
 ```bash
 nano etc/profile
@@ -51,7 +71,7 @@ To check a specific one we can use `echo`
 ```bash
 echo $OPENAI_API_KEY
 ```
-##### On windows
+#### On windows
 Remember that newly set enviornment variables are only accessible after a restart of windows. 
 
 ``Start menu --> Edit system enviornment variables --> Enviornment variables --> System variable --> Add``
@@ -60,7 +80,7 @@ Remember that newly set enviornment variables are only accessible after a restar
 
 
 
-### Bash script
+## Bash script
 Then we write a bash script with a tag `-l` which ensures enviornment variables are accessible when the script is run from crontab. 
 
 The `source` and `streamlit run` both need the full path to their respective files. We finally save this file as `RunChatGPT.sh`
@@ -71,7 +91,7 @@ source "home/raspi4/Dokumenter/ChatGPTIntegration/env/bin/activate"
 streamlit run "home/raspi4/Dokumenter/ChatGPTIntegration/OpenAI_Demos.py"
 ```
 
-### Start on reboot
+## Start on reboot
 Ideally, we want our streamlit app to restart automatically after the raspberrypi reboots. We can do this by updating the crontab. To open crontab on nano use the following. 
 
 ```bash
@@ -85,15 +105,15 @@ This should then run streamlit when the raspberrypi reboots.
 
 -----------------------------------------------------------
 
-### Authors
+## Authors
 
 * *Initial commit* - [jeev20](https://github.com/jeev20)
 
-### License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/LICENSE) file for details
 
-### Acknowledgments
+## Acknowledgments
 
 
 Thanks to folks at [Streamlit](https://github.com/streamlit/streamlit) and [OpenAI](https://openai.com).
