@@ -58,8 +58,8 @@ Remember that newly set enviornment variables are only accessible after a restar
 
 
 
-#### Bash script
-Then we write a bash script with a tag `-l` which ensures enviornment variables are accessible. 
+### Bash script
+Then we write a bash script with a tag `-l` which ensures enviornment variables are accessible when the script is run from crontab. 
 
 The `source` and `streamlit run` both need the full path to their respective files. We finally save this file as `RunChatGPT.sh`
 ```bash
