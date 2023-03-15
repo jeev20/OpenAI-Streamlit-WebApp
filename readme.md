@@ -1,19 +1,19 @@
 ## OpenAI-Streamlit app deployed on a Raspberry Pi 4
-This integration uses the OpenAI API and explores their different models. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing search history by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAIIntegration/blob/master/pages/3_📋_Search_History.py) page. 
+This integration uses the OpenAI API and explores their different models. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing search history by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/pages/3_📋_Search_History.py) page. 
 
 ## Examples
 
 #### ChatGPT (generation and history retreival)
 
-![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/ChatGPTPage.JPG "ChatGPT Page")
+![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/ChatGPTPage.JPG "ChatGPT Page")
 
-![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/SearchPageChatGPT.JPG "Search Page ChatGPT")
+![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/SearchPageChatGPT.JPG "Search Page ChatGPT")
 
 #### Dall-E2 (generation and history retreival)
 
-![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/Dall-E2Page.JPG "Dall-E2 Page")
+![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/Dall-E2Page.JPG "Dall-E2 Page")
 
-![alt text](https://github.com/jeev20/OpenAIIntegration/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
+![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
 
 
 ### Hosting
@@ -74,7 +74,7 @@ This should then run streamlit when the raspberrypi reboots.
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/jeev20/pigstack/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/LICENSE) file for details
 
 ### Acknowledgments
 
