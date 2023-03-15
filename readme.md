@@ -8,7 +8,8 @@ The cool thing about the `Search History` page is that it preserves the markdown
  <summary>Table of contents</summary>
 
 - [OpenAI-Streamlit app deployed on a Raspberry Pi 4](#openai-streamlit-app-deployed-on-a-raspberry-pi-4)
-- [Usage](#usage)
+- [Usage using docker](#usage-using-docker)
+- [Usage local execution](#usage-local-execution)
 - [Examples](#examples)
     - [ChatGPT (generation and history retreival)](#chatgpt-generation-and-history-retreival)
     - [Dall-E2 (generation and history retreival)](#dall-e2-generation-and-history-retreival)
@@ -22,9 +23,16 @@ The cool thing about the `Search History` page is that it preserves the markdown
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
+
 </details>
 
-## Usage
+## Usage using docker
+* Clone this repository
+* Build the image `docker build -t openai-streamlit-webapp .`
+* Run the container `docker run -p 8501:8501 openai-streamlit-webapp`
+
+
+## Usage local execution
 * Clone this repository 
 * Set an enviornmental variable for the [OpenAI API key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) (see below how this is done in linux and windows)
 * `CD` into the downloaded repository
