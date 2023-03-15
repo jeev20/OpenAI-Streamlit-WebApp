@@ -28,10 +28,10 @@ This integration uses the OpenAI API and explores their different models. In the
 
 ### Hosting
 
-I host this app on a raspberrypi 4 which serves as my assistant. ChatGPT does improve troubleshooting and helps me be a better developer and I do like having access to this superpower. 
+I host this app on a raspberrypi 4 which serves as my assistant. 
 
 #### OpenVPN
-This implementation will only on your network where the raspberrypi is connected. But that is not good enough. To make it accessible anywhere in the world, I use a OpenVPN solution (from my Asus Router) to access this from anywhere in the world. This first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
+By default this implementation will only be accessible on your network where the raspberrypi is connected. But that is not good enough. To make it accessible anywhere in the world, I use a OpenVPN solution (from my Asus Router) to access this from anywhere in the world. This first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
 
 #### OpenAI API key as Enviornment variable
 ##### On Linux
@@ -94,3 +94,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ### Acknowledgments
 
 * Thanks to folks at Streamlit and OpenAI 
+ChatGPT does improve troubleshooting and helps me be a better developer and I do like having access to this superpower. Thank you Streamlit for making it so easy to run such demos. 
