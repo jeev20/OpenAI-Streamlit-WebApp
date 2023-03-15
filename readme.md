@@ -33,7 +33,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
   ```bash 
   docker build -t openai-streamlit-webapp .
   ```
-* Run the container 
+* Run the container (`--name` names the container, `-e` passes an environment variable into the container)
   ```bash 
   docker run -p 8501:8501 --name openai-streamlit-webapp -e OPENAI_API_KEY=$env:OPENAI_API_KEY  openai-streamlit-webapp
   ```
