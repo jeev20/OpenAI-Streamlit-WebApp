@@ -30,7 +30,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 * Clone this repository
 * `cd` into the downloaded repository
 * Build the image `docker build -t openai-streamlit-webapp .`
-* Run the container `docker run -p 8501:8501 --name openai-streamlit-webapp openai-streamlit-webapp`
+* Run the container `docker run -p 8501:8501 --name openai-streamlit-webapp -e OPENAI_API_KEY=$env:OPENAI_API_KEY  openai-streamlit-webapp`
 * Open the browser with address `http://localhost:8501`
 
 ## Usage local execution
