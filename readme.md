@@ -94,6 +94,6 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ### Acknowledgments
 
 
-Thanks to folks at Streamlit and OpenAI.
+Thanks to folks at [Streamlit](https://github.com/streamlit/streamlit) and [OpenAI](https://openai.com).
 
 ChatGPT does improve troubleshooting and helps me be a better developer and I do like having access to this superpower. Thank you Streamlit for making it so easy to run such demos. 
