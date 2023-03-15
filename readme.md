@@ -31,7 +31,7 @@ This integration uses the OpenAI API and explores their different models. In the
 I host this app on a raspberrypi 4 which serves as my assistant. 
 
 #### OpenVPN
-By default this implementation will only be accessible on your network where the raspberrypi is connected. But that is not good enough. To make it accessible anywhere in the world, I use a OpenVPN solution (from my Asus Router) to access this from anywhere in the world. This first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
+By default this implementation will only be accessible on your network where the raspberrypi is connected. But that is not good enough. To make it accessible anywhere in the world, I use a OpenVPN solution (from my Asus Router). This  This first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
 
 #### OpenAI API key as Enviornment variable
 ##### On Linux
