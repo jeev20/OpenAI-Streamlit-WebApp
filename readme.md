@@ -71,7 +71,7 @@ source "home/raspi4/Dokumenter/ChatGPTIntegration/env/bin/activate"
 streamlit run "home/raspi4/Dokumenter/ChatGPTIntegration/OpenAI_Demos.py"
 ```
 
-#### Start on reboot
+### Start on reboot
 Ideally, we want our streamlit app to restart automatically after the raspberrypi reboots. We can do this by updating the crontab. To open crontab on nano use the following. 
 
 ```bash
