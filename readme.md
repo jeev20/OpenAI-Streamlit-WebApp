@@ -23,7 +23,7 @@ This integration uses the OpenAI API and explores their different models. In the
 
 ![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/Dall-E2Page.JPG "Dall-E2 Page")
 
-![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApppi/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
+![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
 
 
 ### Hosting
