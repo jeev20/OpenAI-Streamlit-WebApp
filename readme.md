@@ -1,6 +1,16 @@
 ## OpenAI-Streamlit app deployed on a Raspberry Pi 4
 This integration uses the OpenAI API and explores their different models. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing search history by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/pages/3_📋_Search_History.py) page. 
 
+## Usage
+* Clone this repository 
+* Set an enviornmental variable for the Open API key (see below how this is done)
+* `CD` into the downloaded repository
+* Create a virtual environment in the repository (i use virtualenv : `virtualenv env`)
+* Activate your virtual environment `source env/bin/activate` on linux OR `.\env\Scripts\activate.ps1` on windows
+* Run `pip install -r requirements.txt` within your virtual environment
+* Run `streamlit run .\OpenAI_Demos.py` a browser will be opened at `http://localhost:8501`
+
+
 ## Examples
 
 #### ChatGPT (generation and history retreival)
@@ -13,7 +23,7 @@ This integration uses the OpenAI API and explores their different models. In the
 
 ![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/Dall-E2Page.JPG "Dall-E2 Page")
 
-![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
+![alt text](https://github.com/jeev20/OpenAI-Streamlit-WebApppi/blob/master/images/SearchPageDall-E2.JPG "Search Page Dall-E2")
 
 
 ### Hosting
