@@ -1,5 +1,5 @@
 ## OpenAI-Streamlit app deployed on a Raspberry Pi 4
-This integration uses the OpenAI API and explores their different models. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing search history by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/pages/3_📋_Search_History.py) page. 
+This streamlit multi-page app explores the different models from OpenAI API. In the first version of this streamlit app, 2 models ("gpt-3.5-turbo", "Dall-E2") are implemented along with a custom page showing the search history (server side) by parsing a local log file. I do this by storing the promts and responses obtained to a log file. For `Dall-E2`, I save the images locally from the response web url and then access them in the [3_📋_Search_History.py](https://github.com/jeev20/OpenAI-Streamlit-WebApp/blob/master/pages/3_📋_Search_History.py) page. 
 
 ## Usage
 * Clone this repository 
