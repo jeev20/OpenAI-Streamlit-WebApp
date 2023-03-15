@@ -5,6 +5,12 @@ from itertools import cycle
 from PIL import Image
 
 st.markdown("#### Parse search history")
+# Setting name of the page in Streamlit
+st.set_page_config(
+    page_title="Search_History",
+    page_icon="📋",
+)
+
 # Give user the model options to choose from
 models = ["ChatGPT", "Dall-E2"]  
 selected_model = st.radio("Choice", options=models, label_visibility="hidden",)
