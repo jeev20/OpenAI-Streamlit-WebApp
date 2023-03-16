@@ -42,7 +42,8 @@ The cool thing about the `Search History` page is that it preserves the markdown
   ```bash 
   docker run -p 8501:8501 --name openai-streamlit-webapp -e OPENAI_API_KEY=$env:OPENAI_API_KEY  openai-streamlit-webapp
   ```
-* Open the browser with address `http://localhost:8501`
+* Open the browser with address `http://localhost:8501` or `http://YOURLOCALIP:8501`
+* For subsequent runs `docker start openai-streamlit-webapp`
 
 #### Caveat with docker
 The negative with running this on docker is that you will have to setup additional volumes on the host machine which are mapped to the containers folders `images` and `logs`. Doing this will ensure that you have all historical promts saved on disk and the images or logs are not wiped out when deleting the container. 
@@ -54,7 +55,7 @@ The negative with running this on docker is that you will have to setup addition
 * Create a virtual environment in the repository (i use virtualenv : `virtualenv env`)
 * Activate your virtual environment `source env/bin/activate` on linux OR `.\env\Scripts\activate.ps1` on windows
 * Run `pip install -r requirements.txt` within your virtual environment
-* Run `streamlit run .\OpenAI_Demos.py` a browser will be opened at `http://localhost:8501`
+* Run `streamlit run .\OpenAI_Demos.py` a browser will be opened at `http://localhost:8501` or `http://YOURLOCALIP:8501`
 
 ### OpenAI API key as Environment variable
 1. On Linux
