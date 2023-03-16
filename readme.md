@@ -45,7 +45,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 * Open the browser with address `http://localhost:8501`
 
 #### Caveat with docker
-The negative with running this on docker is that you will have to setup additional volumes on the host machine which are mapped to the containers folders `images` and `logs`. Doing this will ensure that you have all historical promts saved on disk and the images or logs are not wiped out when stopping the container. 
+The negative with running this on docker is that you will have to setup additional volumes on the host machine which are mapped to the containers folders `images` and `logs`. Doing this will ensure that you have all historical promts saved on disk and the images or logs are not wiped out when deleting the container. 
 
 ### Usage local execution
 * Clone this repository 
