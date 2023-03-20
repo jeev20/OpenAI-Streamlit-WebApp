@@ -126,7 +126,7 @@ The negative with running this on docker is that you will have to setup addition
 
 ## Hosting with OpenVPN
 
-I host this app on a raspberrypi 4 which I run 24x7. It is hardwired to my Asus router. I use local execution approach, but in hindsight using docker with mapped drives to my NAS could have been a more elegant solution. I could have also used the docker dameon to run the container on reboot and avoided the crontab task. May be in the future. 
+I host this app on a raspberrypi 4 which I run 24x7. It is hardwired to my Asus router. I use local execution approach, but in hindsight using docker with mapped drives to my NAS could have been a more elegant solution. I could have also used the docker dameon to run the container on reboot and avoided the crontab task. You can modify the docker-compose.yml to get this working as you wish. 
 
 By default this implementation will only be accessible on your network where the raspberrypi / server is connected. But that is not good enough. 
 
