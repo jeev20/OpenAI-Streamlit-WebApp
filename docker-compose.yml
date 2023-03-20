@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: 
+      context: .
+    container_name: openai-streamlit-webapp
+    restart: unless-stopped 
+    ports:
+      - 8501:8501
+    volumes:
+      - .:/app
