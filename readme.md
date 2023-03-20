@@ -35,7 +35,11 @@ The cool thing about the `Search History` page is that it preserves the markdown
 ### Using docker compose
 * Clone this repository
 * `cd` into the cloned repository
-* `docker compose up` will run the container 
+* Create a `.env` file with the following content
+  ```bash 
+  OPENAI_API_KEY=YOUR API KEY
+  ```
+* Run `docker compose up` will build and start the container 
 * Open the browser with address `http://localhost:8501` or `http://YOURLOCALIP:8501`
 * To close the container `docker compose down`
   
