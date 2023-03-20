@@ -66,6 +66,7 @@ The cool thing about the `Search History` page is that it preserves the markdown
 * For subsequent runs `docker start openai-streamlit-webapp`
   
 </details>
+
 #### Caveat with docker
 The negative with running this on docker is that you will have to setup additional volumes on the host machine which are mapped to the containers folders `images` and `logs`. Doing this will ensure that you have all historical promts saved on disk and the images or logs are not wiped out when deleting the container. 
 
