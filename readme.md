@@ -10,7 +10,8 @@ The cool thing about the `Search History` page is that it preserves the markdown
  
 - [OpenAI-Streamlit app deployed on a Raspberry Pi 4](#openai-streamlit-app-deployed-on-a-raspberry-pi-4)
 - [Usage](#usage)
-  - [Using docker](#using-docker)
+  - [Using docker compose](#using-docker-compose)
+  - [Using docker run](#using-docker-run)
     - [Caveat with docker](#caveat-with-docker)
   - [Usage local execution](#usage-local-execution)
   - [OpenAI API key as Environment variable](#openai-api-key-as-environment-variable)
@@ -25,13 +26,23 @@ The cool thing about the `Search History` page is that it preserves the markdown
 - [Acknowledgments](#acknowledgments)
 
 
+
 </details>
 
  --------------------------------------------------
 
 ## Usage 
+### Using docker compose
+* Clone this repository
+* `cd` into the cloned repository
+* `docker compose up` will run the container 
+* Open the browser with address `http://localhost:8501` or `http://YOURLOCALIP:8501`
+* To close the container `docker compose down`
+  
+<details>
+<summary> Using docker run</summary>
 
-### Using docker
+### Using docker run
 * Clone this repository
 * `cd` into the cloned repository
 * Build the image note the `.` signifying the current directory
@@ -44,7 +55,8 @@ The cool thing about the `Search History` page is that it preserves the markdown
   ```
 * Open the browser with address `http://localhost:8501` or `http://YOURLOCALIP:8501`
 * For subsequent runs `docker start openai-streamlit-webapp`
-
+  
+</details>
 #### Caveat with docker
 The negative with running this on docker is that you will have to setup additional volumes on the host machine which are mapped to the containers folders `images` and `logs`. Doing this will ensure that you have all historical promts saved on disk and the images or logs are not wiped out when deleting the container. 
 
