@@ -28,6 +28,7 @@ if os.path.exists(log_filepath):
     # Populate promts and responses for given models 
     responses = [] # your images here
     promts = [] # your caption here
+    log_items.reverse()  # ensures the newest search is shown first
     for log in log_items:  # iterate through the list (for line in logs)
         # Here we fetch and filter logs to the selected model. 
         import json 
