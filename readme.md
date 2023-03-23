@@ -132,6 +132,8 @@ By default this implementation will only be accessible on your network where the
 
 To make it accessible anywhere in the world, I use a OpenVPN server (from my Asus Router). The first version was developed during my vacation in India and deployed on a raspberrypi back home in Norway. It is pretty cool to have access to your home network anywhere you go!
 
+<details>
+ <summary>Restart on reboot </summary>
 ### Bash script
 Then we write a bash script with a tag `-l` which ensures enviornment variables are accessible when the script is run from crontab. 
 
@@ -154,6 +156,9 @@ Add the following at the end of `crontab` file
 @reboot /home/raspi4/RunChatGPT.sh
 ```
 This should then run streamlit when the raspberrypi reboots. 
+
+
+</details>
 
 -----------------------------------------------------------
 
