@@ -47,7 +47,7 @@ if os.path.exists(log_filepath):
         cols = cycle(st.columns(1))    
         for idx, response in enumerate(responses):
             next(cols).markdown("**Promt**: %s" % promts[idx].replace('\'','"') )  # Ensures that quotes given in the promt are parsed correctly from the logs
-            next(cols).markdown("**Response**: %s" %(response.replace('\'','"').replace('NEWLINE','\n',)))  # Ensures that we get a nice markdown same as the original response from OpenAI
+            next(cols).markdown("**Response**: %s" %(response.replace('\'','"').replace('NEWLINE','\n',).replace("\\","\\\\")))  # Ensures that we get a nice markdown same as the original response from OpenAI
             next(cols).markdown("******")
     elif selected_model=="Dall-E2":  # Logic for Dall-E2
         cols = cycle(st.columns(2))    
